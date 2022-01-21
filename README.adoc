@@ -1,0 +1,41 @@
+= Network Cross Account Role
+:toc:
+:!toc-title:
+:!toc-placement:
+
+A module to allow the networking account to tag subnets
+
+toc::[]
+
+== About
+
+Because AWS Resource Access Manager doesn't share tags together with the resources, we need to do it ourselves.
+
+This module allows a networking account to tag resources that it has shared.
+
+== Usage
+
+Place the module in all environments within your `<account>-aws` repository!
+
+[source, hcl]
+----
+module "networking_cross_accountf-role" {
+  source = "github.com/nsbno/terraform-aws-network-account-role?ref=x.y.z"
+
+  # TODO: Replace with your networking account's ID.
+  account_id = 1234567890
+}
+----
+
+This will create a role that allows your networking account to only tag subnets.
+
+== Relevant Repositories
+
+These are relevant repositories that can be worth checking out:
+
+link:https://github.com/nsbno/network-shared-subnets[`network-shared-subnets`]::
+Shared subnets get created here.
+Your account needs the role created here to get added here!
+
+link:https://github.com/nsbno/network-common[`network-common`]::
+Common networking for the organization!
