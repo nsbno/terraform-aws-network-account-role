@@ -1,4 +1,7 @@
 resource "aws_iam_role" "this" {
+  name = "NetworkingAccountAccess"
+  description = "Allows the common networking account to tag resources it shared with us"
+
   assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
 }
 
