@@ -31,6 +31,6 @@ data "aws_iam_policy_document" "allow_tagging" {
       "ec2:DeleteTags",
       "ec2:DescribeTags",
     ]
-    resources = ["arn:aws:ec2:*:*:subnet/*"]
+    resources = ["*"]
   }
 }
