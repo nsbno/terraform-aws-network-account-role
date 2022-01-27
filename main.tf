@@ -28,6 +28,8 @@ data "aws_iam_policy_document" "allow_tagging" {
     actions = [
       "ec2:DescribeSubnets",
       "ec2:CreateTags",
+      "ec2:DeleteTags",
+      "ec2:DescribeTags",
     ]
     resources = ["arn:aws:ec2:*:*:subnet/*"]
   }
